@@ -1,0 +1,29 @@
+[package]
+name = "test-contract"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+io = { path = "io" }
+gstd = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+gmeta = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+parity-scale-codec = { version = "3", default-features = false }
+scale-info = { version = "2", default-features = false }
+hashbrown = "0.14"
+
+[build-dependencies]
+io = { path = "io" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+gmeta = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+
+[dev-dependencies]
+gtest = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+gstd = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+gclient = { git = "https://github.com/gear-tech/gear.git", tag = "v1.2.0" }
+tokio = "1"
+
+[features]
+binary-vendor = []
+wasm-opt = ["gear-wasm-builder/wasm-opt"]
+default = ["binary-vendor", "wasm-opt"]
+
